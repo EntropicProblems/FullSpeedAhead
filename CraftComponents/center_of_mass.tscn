@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cox0m1vdtfjcw"]
+
+[ext_resource type="Script" uid="uid://dtv7mx7fekt8h" path="res://CraftComponents/CenterOfMass.cs" id="1_84ywc"]
+
+[node name="Center of Mass" type="Node3D"]
+editor_description = "This component takes a position and force from a thruster/collision to generate linear and rotational movement"
+script = ExtResource("1_84ywc")
