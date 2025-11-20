@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtdjndhigbuv7"]
+
+[ext_resource type="Script" uid="uid://c6y04umxjeji1" path="res://CraftComponents/pilot.gd" id="1_3x10t"]
+
+[node name="Pilot" type="CharacterBody3D"]
+script = ExtResource("1_3x10t")

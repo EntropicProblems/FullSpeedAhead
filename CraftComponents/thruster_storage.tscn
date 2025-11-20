@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmv2d4jjda5io"]
+
+[ext_resource type="Script" uid="uid://bj26k6ot3d54x" path="res://thruster_storage.gd" id="1_o4feo"]
+
+[node name="ThrusterStorage" type="Node"]
+script = ExtResource("1_o4feo")

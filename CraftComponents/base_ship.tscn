@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://66arf74ctl4r"]
+
+[ext_resource type="PackedScene" uid="uid://bmv2d4jjda5io" path="res://CraftComponents/thruster_storage.tscn" id="1_71lyo"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_cbc1o"]
+
+[node name="BaseShip" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PrismMesh_cbc1o")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
+polygon = PackedVector2Array(0, 1, 1, -1, -1, -1)
+
+[node name="ThrusterStorage" parent="." instance=ExtResource("1_71lyo")]
+thruster_positions = PackedVector3Array(0, 0, 0)
+thruster_directions = PackedVector3Array(0, 0, 1)
+thruster_max_strength = PackedFloat64Array(100)
