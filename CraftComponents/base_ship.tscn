@@ -6,7 +6,6 @@
 [sub_resource type="PrismMesh" id="PrismMesh_cbc1o"]
 
 [node name="BaseShip" type="RigidBody3D"]
-gravity_scale = 0.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PrismMesh_cbc1o")

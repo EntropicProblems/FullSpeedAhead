@@ -16,11 +16,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(ship != null):
 		print(ship.global_position) #just some filler to do some testing
+		print(ship.rotation)
 	if(flight_controller == null && ship != null):
 		flight_controller = ship.get_node("FlightController")
 	var hormovement = Input.get_vector("thr_left", "thr_right", "thr_frd", "thr_bwd")
 	var vertmov = Input.get_axis("thr_up", "thr_dwn")
 	var movement = Vector3(hormovement.x, vertmov, hormovement.y)
+	var horrotation = Input.get_vector("ptch_fwd", "ptch_bck", "roll_right", "roll_left")
+	var vertrotation = Input.get_axis("yaw_right", "yaw_left")
+	var rotation = Vector3(horrotation.x, vertrotation, horrotation.y)
 	#talk to your child FlightController
 	if(flight_controller != null):
-		flight_controller.fire_thrusters(movement, Vector3.ZERO, ship)
+		flight_controller.fire_thrusters(movement, rotation, ship)

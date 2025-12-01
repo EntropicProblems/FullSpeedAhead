@@ -1,5 +1,6 @@
 extends Node3D
 func _ready() -> void:
+	ProjectSettings.set_setting("physics/3d/default_gravity", "0")
 	single_pilot()
 func build_thrusters(ship:Node3D):
 	var flight_controller= preload("res://CraftComponents/flight_controller.tscn").instantiate()
