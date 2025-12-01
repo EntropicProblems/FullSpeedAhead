@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsmi6mt4namot"]
+
+[ext_resource type="Script" uid="uid://byqkps63ebc68" path="res://flight_controller.gd" id="1_u6xj7"]
+
+[node name="FlightController" type="Node"]
+script = ExtResource("1_u6xj7")

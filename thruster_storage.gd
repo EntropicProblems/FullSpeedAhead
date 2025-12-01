@@ -1,3 +1,4 @@
+class_name ThrusterStorage
 extends Node
 
 @export var thruster_positions:PackedVector3Array
