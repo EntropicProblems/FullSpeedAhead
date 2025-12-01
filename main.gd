@@ -14,4 +14,6 @@ func single_pilot():
 	live_pilot.ask_for_ship.connect(give_ship)
 	add_child(live_pilot)
 func give_ship(pilot, ship_type):
-	pilot.ship = load(file_macro.shipfile["base"]).instantiate()
+	var new_ship = load(file_macro.shipfile[ship_type]).instantiate()
+	add_child(new_ship)
+	pilot.ship = new_ship

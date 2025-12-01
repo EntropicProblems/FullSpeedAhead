@@ -12,12 +12,15 @@ signal ask_for_ship(myself, ship_type)
 #when we use inputs for movement, we check the array for a valid thruster combination
 func _ready() -> void:
 	#get our ship
-	await ask_for_ship.emit(self, "base")
-	flight_controller = ship.get_node("FlightController")
+	ask_for_ship.emit(self, "base")
 func _process(delta: float) -> void:
-	print(ship.global_position) #just some filler to do some testing
+	if(ship != null):
+		print(ship.global_position) #just some filler to do some testing
+	if(flight_controller == null && ship != null):
+		flight_controller = ship.get_node("FlightController")
 	var hormovement = Input.get_vector("thr_left", "thr_right", "thr_frd", "thr_bwd")
 	var vertmov = Input.get_axis("thr_up", "thr_dwn")
 	var movement = Vector3(hormovement.x, vertmov, hormovement.y)
 	#talk to your child FlightController
-	flight_controller.fire_thrusters(movement, Vector2.ZERO, ship)
+	if(flight_controller != null):
+		flight_controller.fire_thrusters(movement, Vector3.ZERO, ship)
