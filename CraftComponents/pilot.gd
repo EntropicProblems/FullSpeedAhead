@@ -2,6 +2,7 @@ class_name Pilot
 extends CharacterBody3D
 
 @export var ship:Node3D
+var flight_assist = false
 var flight_controller
 #we use this to store the thrust grouping, where each grouping pointed in the direction of a positive or negative basis
 var thruster_combinations:Array
