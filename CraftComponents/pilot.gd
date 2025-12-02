@@ -27,4 +27,4 @@ func _process(delta: float) -> void:
 	var rotation = Vector3(horrotation.x, vertrotation, horrotation.y)
 	#talk to your child FlightController
 	if(flight_controller != null):
-		flight_controller.fire_thrusters(movement, rotation, ship)
+		flight_controller.fire_thrusters(ship.basis * movement, ship.basis * rotation, ship)
